@@ -15,4 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: show what is verion of python, docker
-        run: docker --version && python -version
+        run: docker --version && python --version
