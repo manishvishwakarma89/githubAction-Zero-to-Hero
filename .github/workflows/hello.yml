@@ -1,4 +1,4 @@
-name: Hello
+name: Manish Vishwakarma
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: say hello to users
-        run: echo "Hello world"
+        run: echo "Hello friends"
       - name: say hello to username
         run: echo "Hello $USER"
   details:
