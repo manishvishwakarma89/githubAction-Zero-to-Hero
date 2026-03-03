@@ -4,7 +4,18 @@ name: CICD
 # Trigger manually
 on:
   workflow_dispatch:
-
+    # inputs the env dev,staging,production
+    inputs:
+      environment:
+        description: This is the environment where this workflows runs
+        default: 'dev'
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
+          
 jobs:
 
   code:
