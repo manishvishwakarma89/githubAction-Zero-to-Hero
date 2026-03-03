@@ -1,13 +1,12 @@
-# Name of workflow
-name: CICD
+# This defines the name of the workflow that appears in the GitHub Actions pipeline dashboard.
+name: CICD 
 
-# Trigger manually
 on:
+    #This means the pipeline runs manually from GitHub UI.
   workflow_dispatch:
-    # inputs the env dev,staging,production
     inputs:
       environment:
-        description: This is the environment where this workflows runs
+        description: This is environment where this workflows runs
         default: 'dev'
         required: true
         type: choice
@@ -15,7 +14,7 @@ on:
           - dev
           - prod
           - staging
-          
+
 jobs:
 
   code:
@@ -23,25 +22,25 @@ jobs:
     steps:
       - name: Checkout code
         run: echo "Code clone from GitHub"
-
+        
   build:
     runs-on: ubuntu-latest
     needs: code
     steps:
-      - name: Build Docker container
-        run: echo "Docker container build"
+      - name: Build the Docker container
+        run: echo "Docker build container"
+ test:
+   runs-on: ubuntu-latest
+   needs: build
+   steps:
+     - name: Test the Docker container
+       run: echo "Test the docker container"
+       
+ deploy:
+   runs-on: ubuntu-latest
+   needs: test
+   steps:
+     - name: Deploy the Contaienr
+       run: echo "Deploy the container"
 
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Test the container
-        run: echo "Test the container"
-
-  deploy:
-    if: inputs.environment == 'dev'
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Deploy the container
-        run: echo "Deploy docker compose the app"
+  needs: code
