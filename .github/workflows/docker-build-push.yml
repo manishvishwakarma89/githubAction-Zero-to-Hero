@@ -26,4 +26,4 @@ jobs:
           tags: |
             ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.ref_name }}
             ${{ vars.DOCKERHUB_USER }}/github-actions-app:latest
-            ${{ vars.DOCKERHUB_TOKEN }}/github-actions-app:${{ github.sha}}
+            ${{ vars.DOCKERHUB_USER}}/github-actions-app:${{ github.sha}}
