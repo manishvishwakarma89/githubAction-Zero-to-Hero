@@ -1,4 +1,4 @@
-name: Deploy My Flask APP
+name: Deploy Anaconda Flask APP
 
 on:
     workflow_run:
