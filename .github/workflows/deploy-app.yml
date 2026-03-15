@@ -16,6 +16,7 @@ jobs:
 
             - name: Set up Docker Compose (optional, usually pre-installed on ubuntu-latest runners)
               uses: docker/setup-compose-action@v2
-              
+
             - name: deploy with docker compose
-              run: docker compose up -d --build
+              run: docker compose down && docker compose up --build --force-recreate
+              
