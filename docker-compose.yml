@@ -1,7 +1,6 @@
-service:
+services:
 
-web:
+  web:
     image: ${DOCKERHUB_USER}/github-actions-app:${DOCKER_TAG}
-     ports:
+    ports:
      - "80:80"
-     
