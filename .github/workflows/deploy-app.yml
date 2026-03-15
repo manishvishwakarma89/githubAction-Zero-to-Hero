@@ -18,5 +18,5 @@ jobs:
               uses: docker/setup-compose-action@v2
 
             - name: deploy with docker compose
-              run: docker compose down && docker compose up --build --force-recreate
-              
+              run: docker compose up --build
+
