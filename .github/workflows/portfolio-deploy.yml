@@ -1,6 +1,6 @@
 name: Portfolio
 on:
-    workflow_dispatch:
+    workflow_call:
 permissions:
     pages: write      
     id-token: write   

@@ -1,0 +1,20 @@
+name: DevSecOps Pipeline
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    # Code Quality check
+    code-quality:
+        uses: ./.github/workflows/code-quality.yml
+    
+    # Secrets Scan & Git Leak 
+    secrets-scan:
+        uses: ./.github/workflows/secrets-scan.yml
+        secrets: inherit
+    
+    # Dependency Scan & requirements.txt
+    depedency-scan:
+        uses: ./.github/workflows/dependency-scan.yml
+    
