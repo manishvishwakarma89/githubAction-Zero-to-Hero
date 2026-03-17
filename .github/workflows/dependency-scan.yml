@@ -1,2 +1,24 @@
 # Packages- issues or vurlabilities
+# pip-audit
 name: Dependency Scan
+
+on:
+    workflow_call:
+
+jobs:
+        dependency-check:
+            runs-on: ubuntu-latest
+            steps:
+                - name: Checkout Code
+                  uses: actions/checkout@v4
+
+                - name: Install Pip Audit
+                  run:  pip install pip-audit
+
+                - name: Audit Dependency
+                  run: pip-audit -r requirements.txt
+
+
+
+
+
