@@ -1,2 +1,3 @@
 flake8 # lib for checking libraries
-flask
+flask=3.1.0
+bandit
