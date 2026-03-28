@@ -1,5 +1,4 @@
 name: DevSecOps End To End Pipeline
-
 on: 
     push:
         branches: [main]
